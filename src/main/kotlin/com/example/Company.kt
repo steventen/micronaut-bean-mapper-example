@@ -1,6 +1,6 @@
 package com.example
 
-import io.micronaut.serde.annotation.Serdeable
+import io.micronaut.core.annotation.Introspected
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
@@ -9,7 +9,7 @@ import java.math.BigDecimal
 
 @Entity
 @Table(name = "companies")
-@Serdeable
+@Introspected
 data class Company(
     @Id
     val id: String,
