@@ -11,8 +11,14 @@ data class CompanyDto(
     val companyName: String,
 )
 
+//interface CompanyMapper {
+//    @Mapping(to = "companyName", from = "#{company.name}")
+//    fun toDto(company: Company): CompanyDto
+//}
+
 @Singleton
 abstract class CompanyMapper {
+    // if use @Mapper without transformation works
     @Mapping(to = "companyName", from = "#{company.name}")
     abstract fun toDto(company: Company): CompanyDto
 }
